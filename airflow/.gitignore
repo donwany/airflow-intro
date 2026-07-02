@@ -8,7 +8,8 @@ __pycache__/
 
 # Airflow generated files
 logs/
-config/
+# Optional (if you don't want to version them)
+# config/
 plugins/
 
 # IDE
