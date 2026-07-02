@@ -1,5 +1,6 @@
 from datetime import datetime
 import csv
+import os
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 
@@ -56,9 +57,14 @@ def transform(ti):
 def load(ti):
     data = ti.xcom_pull(task_ids="transform", key="transformed_data")
 
-    filename = "/opt/airflow/data/sales_report.csv"
+    output_dir = "/opt/airflow/data"
 
-    with open(filename, "w", newline="") as csvfile:
+    # Create the directory if it doesn't exist
+    os.makedirs(output_dir, exist_ok=True)
+
+    output_file = os.path.join(output_dir, "sales_report.csv")
+
+    with open(output_file, "w", newline="") as csvfile:
         writer = csv.DictWriter(
             csvfile,
             fieldnames=data[0].keys()
@@ -67,7 +73,7 @@ def load(ti):
         writer.writeheader()
         writer.writerows(data)
 
-    print(f"Report written to {filename}")
+    print(f"Report written to {output_file}")
 
 
 with DAG(
