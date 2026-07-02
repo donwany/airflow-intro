@@ -9,7 +9,6 @@ __pycache__/
 # Airflow generated files
 logs/
 config/
-dags/
 plugins/
 
 # IDE
