@@ -1,0 +1,20 @@
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Airflow generated files
+logs/
+# Optional (if you don't want to version them)
+# config/
+plugins/
+
+# IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
