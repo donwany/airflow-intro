@@ -8,3 +8,4 @@ __pycache__
 .dags
 .config
 .plugins
+.env
