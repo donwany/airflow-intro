@@ -1,0 +1,10 @@
+config
+dags
+logs
+plugins
+__pycache__
+
+.logs
+.dags
+.config
+.plugins
