@@ -71,7 +71,7 @@ def load(ti):
 
 
 with DAG(
-    dag_id="process_etl_pipeline",
+    dag_id="sales_etl_pipeline",
     start_date=datetime(2026, 1, 1),
     schedule="*/2 * * * *",
     catchup=False,
