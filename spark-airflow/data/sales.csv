@@ -1,0 +1,4 @@
+customer_name,region,sale_date,total_amount
+john doe,west,2025-01-01,100
+jane smith,east,2025-01-02,200
+mark brown,west,2025-01-03,150
