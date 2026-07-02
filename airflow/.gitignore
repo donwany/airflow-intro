@@ -1,11 +1,20 @@
-config
-dags
-logs
-plugins
-__pycache__
-
-.logs
-.dags
-.config
-.plugins
+# Environment variables
 .env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Airflow generated files
+logs/
+config/
+dags/
+plugins/
+
+# IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
