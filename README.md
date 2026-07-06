@@ -5,6 +5,8 @@ curl -LfO 'https://airflow.apache.org/docs/apache-airflow/3.2.2/docker-compose.y
 mkdir -p ./dags ./logs ./plugins ./config
 sudo chmod -R 777 ./config ./logs
 sudo chown -R 50000:0 logs dags plugins config
+
+touch .env
 echo -e "AIRFLOW_UID=$(id -u)" > .env
 echo 'FERNET_KEY=tdRkPal3VWuqVY_Mt92jfEAazYgM4kNsANNzTBAA-Q0=' >> .env
 
