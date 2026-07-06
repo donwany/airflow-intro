@@ -3,6 +3,8 @@
 curl -LfO 'https://airflow.apache.org/docs/apache-airflow/3.2.2/docker-compose.yaml'
 
 mkdir -p ./dags ./logs ./plugins ./config
+sudo chmod -R 777 ./config ./logs
+sudo chown -R 50000:0 logs dags plugins config
 echo -e "AIRFLOW_UID=$(id -u)" > .env
 echo 'FERNET_KEY=tdRkPal3VWuqVY_Mt92jfEAazYgM4kNsANNzTBAA-Q0=' >> .env
 
@@ -25,8 +27,27 @@ http://localhost:8080
 
 The default account has the login `airflow` and the password `airflow`.
 
+# restart api server
+docker compose restart airflow-apiserver
+
+docker compose exec airflow-worker ls -l /opt/airflow/data/sales_report.csv
+docker compose exec airflow-worker cat /opt/airflow/data/sales_report.csv
+
+# Check if the DAGs are paused
+docker compose exec airflow-apiserver airflow dags unpause sales_etl_pipeline
+
+# check the dag files
+docker compose exec airflow-dag-processor ls -l /opt/airflow/dags
+
 # clean-up
 docker compose down --volumes --rmi all
+
+docker compose down
+docker compose build --no-cache
+docker compose up
+
+docker compose exec airflow bash
+spark-submit --version
 
 # reference
 https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html
