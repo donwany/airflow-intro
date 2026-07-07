@@ -21,7 +21,7 @@ def main():
         .withColumnRenamed("sum(total_amount)", "region_revenue")
 
     # 4. Write output
-    output_path = "/opt/airflow/data/region_revenue-v2"
+    output_path = "/opt/airflow/data/region_revenue-v3"
     # df_agg.write.mode("overwrite").parquet(output_path)
     df_agg.write.mode("overwrite").csv(output_path)
 

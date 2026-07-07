@@ -2,7 +2,7 @@
 ```bash
 curl -LfO 'https://airflow.apache.org/docs/apache-airflow/3.2.2/docker-compose.yaml'
 
-mkdir -p ./dags ./logs ./plugins ./config
+mkdir -p  ./logs ./plugins ./config
 sudo chmod -R 777 ./config ./logs
 sudo chown -R 50000:0 logs dags plugins config
 
@@ -44,6 +44,7 @@ docker compose exec airflow-dag-processor ls -l /opt/airflow/dags
 # clean-up
 docker compose down --volumes --rmi all
 
+# run this for spark-airflow
 docker compose down
 docker compose build --no-cache
 docker compose up
