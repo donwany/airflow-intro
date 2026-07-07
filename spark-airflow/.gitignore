@@ -11,6 +11,7 @@ logs/
 # Optional (if you don't want to version them)
 # config/
 plugins/
+logs/
 
 # IDE
 .vscode/
