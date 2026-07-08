@@ -1,0 +1,2 @@
+city,country,weather,description,temperature_f,feels_like_f,min_temp_f,max_temp_f,pressure,humidity,wind_speed,cloudiness,visibility,recorded_at,sunrise,sunset
+Dallas,US,Clouds,overcast clouds,79.97,79.97,78.15,82.22,1017,80,0.45,100,10000,2026-07-08 02:19:41,2026-07-08 06:25:52,2026-07-08 20:38:10
