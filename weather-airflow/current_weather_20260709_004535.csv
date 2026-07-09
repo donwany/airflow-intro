@@ -1,0 +1,2 @@
+city,country,weather,description,temperature_f,feels_like_f,min_temp_f,max_temp_f,pressure,humidity,wind_speed,cloudiness,visibility,recorded_at,sunrise,sunset
+Houston,US,Clouds,overcast clouds,87.89,100.49,87.06,89.2,1015,73,2.24,99,10000,2026-07-08 19:37:44-05:00,2026-07-08 06:27:23-05:00,2026-07-08 20:25:17-05:00

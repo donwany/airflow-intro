@@ -7,6 +7,7 @@ RUN pip install --no-cache-dir \
     numpy \
     boto3 \
     s3fs \
-    apache-airflow-providers-http
+    apache-airflow-providers-http \
+    pymongo
 
 USER airflow

@@ -55,6 +55,22 @@
 
 ```
 
+### Using Airflow Hook
+```python
+from airflow.providers.mongo.hooks.mongo import MongoHook
+
+hook = MongoHook(conn_id="mongodb_default")
+
+collection = (
+    hook.get_conn()
+        [Variable.get("MONGODB_DATABASE")]
+        [Variable.get("MONGODB_COLLECTION")]
+)
+
+collection.insert_one(transformed_data)
+```
+
+
 ### Check if Packages Installed
 ```bash
 docker exec -it airflow-worker bash
