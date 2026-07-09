@@ -1,6 +1,6 @@
 from datetime import datetime, timezone, timedelta
 import json
-
+import certifi
 import pandas as pd
 from pymongo import MongoClient
 from airflow import DAG
@@ -89,7 +89,12 @@ def transform_load_data(ti):
     # Insert into MongoDB
     # ----------------------------
 
-    client = MongoClient(Variable.get("MONGODB_URI"))
+    client = MongoClient(
+        Variable.get("MONGODB_URI"),
+        tls=True,
+        tlsCAFile=certifi.where(),
+        serverSelectionTimeoutMS=30000,
+    )
 
     db = client[Variable.get("MONGODB_DATABASE")]
 

@@ -56,6 +56,10 @@
 ```
 
 ### Using Airflow Hook
+- MONGODB_URI = "mongodb+srv://worldboss:H2WZ9zL3YWRlkI5H@ballotflow.0uvaa.mongodb.net/?appName=ballotflow"
+- MONGODB_DATABASE=openweather
+- MONGODB_COLLECTION=weather
+- 
 ```python
 from airflow.providers.mongo.hooks.mongo import MongoHook
 
